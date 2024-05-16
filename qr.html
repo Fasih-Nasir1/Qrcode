@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code By FasihNasir</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    
+div{
+    font-family: "Play", sans-serif;
+    display: flex;
+    /* width: 20%; */
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+img{
+    height: 250px;
+    width: 270px;
+}
+.container{
+    font-family: "Play", sans-serif;
+    /* border: 2px solid red; */
+    flex-direction: column;
+   display: flex;
+   justify-content: center;
+   align-items: center !important;
+    height: 100vh !important;
+}
+.container >div{
+
+    padding: 20px;
+    box-shadow: rgba(17, 17, 26, 0.264) 0px 4px 16px, rgba(21, 21, 35, 0.1) 0px 8px 32px;
+    /* border: 2px solid red; */
+}
+button{
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 5px;
+    background-color: #6275c2;
+}
+input{
+    border: 2px solid #6275c2;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+button:hover{
+    color: #6275c2;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #6275c2;
+}
+h2{
+    color: #6275c2;
+}
+.d1{
+    position: fixed;
+    top: 100px;
+    right: 10px;
+
+}
+.d1>ul>li{
+    color: #6275c2;
+    list-style: none;
+    padding: 15px 0px;
+}
+.fa-circle{
+    text-align: center;
+    font-size: 3px;
+    margin-left: 3px;
+}
+@media (max-width:992px) {
+    .d1{
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+  
+<div class="d-flex justify-content-cente container align-items-center">
+    
+<div>
+    <h2>Qr Code Generator</h2> 
+    <input type="text" name="" id="code"class="mb-4" placeholder="Enter Text Or URL For Qr Code">
+    
+    <div id="qrcode" class="qr" download>
+        <img src="download.png" alt="" id="fn">
+    </div>
+    <button onclick="fn()" class="mt-4">Create</button>
+    <button onclick="fn1()">Clear</button>
+</div>
+</div>
+
+<script>
+    function fn1(){
+        location.reload()
+    }
+    var qrdiv=document.getElementById("fn");
+    function fn(){
+    var qr=document.getElementById("code").value;
+     qrdiv=document.getElementById("qrcode");
+    qrdiv.style.height="250px"
+    qrdiv.style.width="250px"
+    // var qrdiv1=document.getElementById("qrcode")
+    // qrdiv.src=qrdiv1;
+    qrdiv.innerHTML = '';
+    new QRCode(qrdiv, qr)
+    // QRCode.style.height="300px"
+    }
+</script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script> -->
+    <!-- <script>
+        function generateQRCode() {
+            var text = document.getElementById('text').value;
+            var qrCodeDiv = document.getElementById('qrcode');
+            qrCodeDiv.innerHTML = '';
+
+            new QRCode(qrCodeDiv, text);
+        } -->
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
